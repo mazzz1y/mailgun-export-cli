@@ -26,7 +26,7 @@
       packages = forAllSystems (pkgs: {
         default = pkgs.buildGoModule {
           pname = "mailgun-export-csv";
-          version = "0.1.0";
+          version = "1.0.0";
           src = ./.;
           vendorHash = "sha256-ucco8IL6RBEVG/9/zg2Ox60fy7bLljn+ncdBhWLT7Yk=";
           meta = {
