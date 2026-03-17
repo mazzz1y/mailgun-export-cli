@@ -38,7 +38,7 @@ jobs:
           for platform in "${platforms[@]}"; do
             GOOS="${platform%%/*}"
             GOARCH="${platform##*/}"
-            output_name="mailgun-export-csv-${GOOS}-${GOARCH}"
+            output_name="mailgun-export-cli-${GOOS}-${GOARCH}"
             binary_name="${output_name}"
 
             if [ "$GOOS" = "windows" ]; then
@@ -50,7 +50,7 @@ jobs:
               -ldflags="-s -w" \
               -trimpath \
               -o "dist/${binary_name}" \
-              ./cmd/mailgun-export-csv
+              ./cmd/mailgun-export-cli
 
             if [ "$GOOS" = "windows" ]; then
               (cd dist && zip -q "${output_name}.zip" "${binary_name}")

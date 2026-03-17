@@ -25,13 +25,13 @@
     {
       packages = forAllSystems (pkgs: {
         default = pkgs.buildGoModule {
-          pname = "mailgun-export-csv";
+          pname = "mailgun-export-cli";
           version = "1.0.0";
           src = ./.;
           vendorHash = "sha256-ucco8IL6RBEVG/9/zg2Ox60fy7bLljn+ncdBhWLT7Yk=";
           meta = {
             description = "Export email events from Mailgun to CSV";
-            mainProgram = "mailgun-export-csv";
+            mainProgram = "mailgun-export-cli";
           };
         };
       });

@@ -18,18 +18,18 @@ Domain via --domain flag or MAILGUN_DOMAIN environment variable.
 Region via --region flag or MAILGUN_REGION environment variable (default: us).`
 
 const usageExamples = `  # Export all events from the last 3 days
-  mailgun-export-csv --api-key KEY --domain example.com --begin 72h
+  mailgun-export-cli --api-key KEY --domain example.com --begin 72h
 
   # Export delivered events for a specific date range
-  mailgun-export-csv --events delivered --begin 2026-03-01T00:00:00Z --end 2026-03-05T00:00:00Z
+  mailgun-export-cli --events delivered --begin 2026-03-01T00:00:00Z --end 2026-03-05T00:00:00Z
 
   # Export only specific columns to a file
-  mailgun-export-csv --columns timestamp,event,from,to,subject -o export.csv
+  mailgun-export-cli --columns timestamp,event,from,to,subject -o export.csv
 
   # Filter by sender and recipient
-  mailgun-export-csv --from alice@example.com --to bob@example.com
+  mailgun-export-cli --from alice@example.com --to bob@example.com
 
   # Use environment variables
   export MAILGUN_API_KEY=key-xxx
   export MAILGUN_DOMAIN=example.com
-  mailgun-export-csv --begin 24h --events accepted,delivered`
+  mailgun-export-cli --begin 24h --events accepted,delivered`

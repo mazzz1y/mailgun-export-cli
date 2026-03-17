@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mazzz1y/mailgun-export-csv/internal/export"
+	"github.com/mazzz1y/mailgun-export-cli/internal/export"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func rootCmd() *cobra.Command {
 	)
 
 	cmd := &cobra.Command{
-		Use:          "mailgun-export-csv",
+		Use:          "mailgun-export-cli",
 		Short:        "Export email events from Mailgun to CSV",
 		Long:         longDescription,
 		Example:      usageExamples,

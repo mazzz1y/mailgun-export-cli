@@ -1,4 +1,4 @@
-# mailgun-export-csv
+# mailgun-export-cli
 
 CLI tool to export email events from the Mailgun Events API to CSV.
 
@@ -7,13 +7,13 @@ Uses the [mailgun-go](https://github.com/mailgun/mailgun-go) SDK.
 ## Install
 
 ```bash
-go build -o mailgun-export-csv ./cmd/mailgun-export-csv
+go build -o mailgun-export-cli ./cmd/mailgun-export-cli
 ```
 
 ## Usage
 
 ```bash
-mailgun-export-csv --api-key KEY --domain example.com --begin 72h
+mailgun-export-cli --api-key KEY --domain example.com --begin 72h
 ```
 
 ### Environment Variables
@@ -54,25 +54,25 @@ mailgun-export-csv --api-key KEY --domain example.com --begin 72h
 
 ```bash
 # Export delivered events from the last 24 hours
-mailgun-export-csv --begin 24h --events delivered -o delivered.csv
+mailgun-export-cli --begin 24h --events delivered -o delivered.csv
 
 # Export specific columns for a date range
-mailgun-export-csv \
+mailgun-export-cli \
   --begin 2026-03-01T00:00:00Z \
   --end 2026-03-05T00:00:00Z \
   --columns timestamp,event,from,to,subject \
   -o export.csv
 
 # Filter by sender, pipe to stdout
-mailgun-export-csv --from alice@example.com --begin 72h
+mailgun-export-cli --from alice@example.com --begin 72h
 
 # EU region, multiple event types, limit to 500
-mailgun-export-csv --region eu --events accepted,delivered,failed --limit 500 -o events.csv
+mailgun-export-cli --region eu --events accepted,delivered,failed --limit 500 -o events.csv
 
 # Using environment variables
 export MAILGUN_API_KEY=key-xxx
 export MAILGUN_DOMAIN=example.com
-mailgun-export-csv --begin 72h
+mailgun-export-cli --begin 72h
 ```
 
 ## Filters
@@ -90,9 +90,9 @@ mailgun-export-csv --begin 72h
 
 ```bash
 # Server-side filter (fast) -- full email address
-mailgun-export-csv --to bob@example.com --begin 72h
+mailgun-export-cli --to bob@example.com --begin 72h
 
 # Client-side filter (slower) -- partial string / domain
-mailgun-export-csv --to example.com --begin 72h
+mailgun-export-cli --to example.com --begin 72h
 # warning: --to "example.com" is not a complete email address; filtering client-side (slower, all events will be fetched)
 ```

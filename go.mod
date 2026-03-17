@@ -1,4 +1,4 @@
-module github.com/mazzz1y/mailgun-export-csv
+module github.com/mazzz1y/mailgun-export-cli
 
 go 1.25.5
 

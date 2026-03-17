@@ -10,8 +10,8 @@ import (
 
 	mg "github.com/mailgun/mailgun-go/v5"
 
-	"github.com/mazzz1y/mailgun-export-csv/internal/export"
-	"github.com/mazzz1y/mailgun-export-csv/internal/mailgun"
+	"github.com/mazzz1y/mailgun-export-cli/internal/export"
+	"github.com/mazzz1y/mailgun-export-cli/internal/mailgun"
 )
 
 func run(
